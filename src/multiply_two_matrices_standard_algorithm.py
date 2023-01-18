@@ -1,4 +1,4 @@
-def multiply_two_matrices_brute_force_algorithm(matrix_1: list, matrix_2: list) -> list:
+def multiply_two_matrices_standard_algorithm(matrix_1: list, matrix_2: list) -> list:
     matrix_size_x = len(matrix_1[0])
     matrix_size_y = len(matrix_1)
 

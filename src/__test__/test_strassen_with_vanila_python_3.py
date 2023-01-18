@@ -1,5 +1,5 @@
 import unittest
-from ..strassen_with_vanila_python_3 import strassen_with_vanila_python_3
+from ..strassen_with_vanila_python_3 import strassen
 
 
 class MyTestCase(unittest.TestCase):
@@ -23,7 +23,7 @@ class MyTestCase(unittest.TestCase):
             [72, 65, 91, 99]
         ]
 
-        self.assertEqual(strassen_with_vanila_python_3(matrix_a, matrix_b), matrix_result)
+        self.assertEqual(strassen(matrix_a, matrix_b), matrix_result)
 
     def test_case_1(self):
         matrix_a = [
@@ -43,7 +43,7 @@ class MyTestCase(unittest.TestCase):
             [0, 0, 0, 0]
         ]
 
-        self.assertEqual(strassen_with_vanila_python_3(matrix_a, matrix_b), matrix_result)
+        self.assertEqual(strassen(matrix_a, matrix_b), matrix_result)
 
     def test_case_2(self):
         matrix_a = [
@@ -62,7 +62,7 @@ class MyTestCase(unittest.TestCase):
             [0, 0, 0, 0]
         ]
 
-        self.assertEqual(strassen_with_vanila_python_3(matrix_a, matrix_b), matrix_result)
+        self.assertEqual(strassen(matrix_a, matrix_b), matrix_result)
 
 
 if __name__ == '__main__':

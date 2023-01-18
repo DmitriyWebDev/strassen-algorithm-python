@@ -1,4 +1,4 @@
-from .multiply_two_matrices_brute_force_algorithm import multiply_two_matrices_brute_force_algorithm as multiply_brute_force
+from .multiply_two_matrices_standard_algorithm import multiply_two_matrices_standard_algorithm
 from .split_matrix import split_matrix
 from .entrywise_sum_two_matrices import entrywise_sum_two_matrices as sum_matrices
 from .entrywise_subtract_two_matrices import entrywise_subtract_two_matrices as subtract_matrices
@@ -6,22 +6,22 @@ from .get_horizontal_stack import get_horizontal_stack
 from .get_vertical_stack import get_vertical_stack
 from .get_normalized_matrices import get_normalized_matrices
 
-def strassen_with_vanila_python_3(matrix_a: list, matrix_b: list) -> list:
+def strassen(matrix_a: list, matrix_b: list) -> list:
     matrix_1, matrix_2 = get_normalized_matrices(matrix_a, matrix_b)
 
     if len(matrix_1) <= 2:
-        return multiply_brute_force(matrix_1, matrix_2)
+        return multiply_two_matrices_standard_algorithm(matrix_1, matrix_2)
 
     a, b, c, d = split_matrix(matrix_1)
     e, f, g, h = split_matrix(matrix_2)
 
-    p1 = strassen_with_vanila_python_3(sum_matrices(a, d), sum_matrices(e, h))
-    p2 = strassen_with_vanila_python_3(d, subtract_matrices(g, e))
-    p3 = strassen_with_vanila_python_3(sum_matrices(a, b), h)
-    p4 = strassen_with_vanila_python_3(subtract_matrices(b, d), sum_matrices(g, h))
-    p5 = strassen_with_vanila_python_3(a, subtract_matrices(f, h))
-    p6 = strassen_with_vanila_python_3(sum_matrices(c, d), e)
-    p7 = strassen_with_vanila_python_3(subtract_matrices(a, c), sum_matrices(e, f))
+    p1 = strassen(sum_matrices(a, d), sum_matrices(e, h))
+    p2 = strassen(d, subtract_matrices(g, e))
+    p3 = strassen(sum_matrices(a, b), h)
+    p4 = strassen(subtract_matrices(b, d), sum_matrices(g, h))
+    p5 = strassen(a, subtract_matrices(f, h))
+    p6 = strassen(sum_matrices(c, d), e)
+    p7 = strassen(subtract_matrices(a, c), sum_matrices(e, f))
 
     c11 = sum_matrices(sum_matrices(p1, subtract_matrices(p2, p3)), p4)
     c12 = sum_matrices(p5, p3)

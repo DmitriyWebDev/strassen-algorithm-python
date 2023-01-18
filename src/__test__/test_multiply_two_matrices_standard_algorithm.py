@@ -1,5 +1,5 @@
 import unittest
-from ..multiply_two_matrices_brute_force_algorithm import multiply_two_matrices_brute_force_algorithm
+from ..multiply_two_matrices_standard_algorithm import multiply_two_matrices_standard_algorithm
 
 
 class MyTestCase(unittest.TestCase):
@@ -23,7 +23,7 @@ class MyTestCase(unittest.TestCase):
             [72, 65, 91, 99]
         ]
 
-        self.assertEqual(multiply_two_matrices_brute_force_algorithm(matrix_a, matrix_b), matrix_result)
+        self.assertEqual(multiply_two_matrices_standard_algorithm(matrix_a, matrix_b), matrix_result)
 
 
 if __name__ == '__main__':
