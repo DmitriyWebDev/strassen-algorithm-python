@@ -4,9 +4,11 @@ from .entrywise_sum_two_matrices import entrywise_sum_two_matrices as sum_matric
 from .entrywise_subtract_two_matrices import entrywise_subtract_two_matrices as subtract_matrices
 from .get_horizontal_stack import get_horizontal_stack
 from .get_vertical_stack import get_vertical_stack
+from .get_normalized_matrices import get_normalized_matrices
 
+def strassen_with_vanila_python_3(matrix_a: list, matrix_b: list) -> list:
+    matrix_1, matrix_2 = get_normalized_matrices(matrix_a, matrix_b)
 
-def strassen_with_vanila_python_3(matrix_1: list, matrix_2: list) -> list:
     if len(matrix_1) <= 2:
         return multiply_brute_force(matrix_1, matrix_2)
 
