@@ -1,4 +1,4 @@
-def entrywise_subtract_two_matrices(matrix_1, matrix_2):
+def subtract_matrices(matrix_1, matrix_2):
     matrix_size_x = len(matrix_1[0])
     matrix_size_y = len(matrix_1)
 

@@ -1,16 +1,18 @@
-from .multiply_two_matrices_standard_algorithm import multiply_two_matrices_standard_algorithm
+from .multiply_two_matrices import multiply_two_matrices
 from .split_matrix import split_matrix
-from .entrywise_sum_two_matrices import entrywise_sum_two_matrices as sum_matrices
-from .entrywise_subtract_two_matrices import entrywise_subtract_two_matrices as subtract_matrices
+from .entrywise_sum_two_matrices import sum_matrices
+from .entrywise_subtract_two_matrices import subtract_matrices
 from .get_horizontal_stack import get_horizontal_stack
 from .get_vertical_stack import get_vertical_stack
 from .get_normalized_matrices import get_normalized_matrices
 
 def strassen(matrix_a: list, matrix_b: list) -> list:
+    result = []
     matrix_1, matrix_2 = get_normalized_matrices(matrix_a, matrix_b)
 
     if len(matrix_1) <= 2:
-        return multiply_two_matrices_standard_algorithm(matrix_1, matrix_2)
+        result = multiply_two_matrices(matrix_1, matrix_2)
+        return result
 
     a, b, c, d = split_matrix(matrix_1)
     e, f, g, h = split_matrix(matrix_2)

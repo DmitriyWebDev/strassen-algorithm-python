@@ -1,4 +1,4 @@
-def entrywise_sum_two_matrices(matrix_1, matrix_2):
+def sum_matrices(matrix_1, matrix_2):
     matrix_size_x = len(matrix_1[0])
     matrix_size_y = len(matrix_1)
 
