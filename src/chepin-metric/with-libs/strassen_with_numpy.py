@@ -3,15 +3,15 @@ from .split_matrix import split_matrix
 from .multiply_two_matrices import multiply_two_matrices
 
 
-def strassen(A, B):
+def strassen(matrix_a, matrix_b):
     result = []
 
-    if len(A) <= 2:
-        result = multiply_two_matrices(A, B)
+    if len(matrix_a) <= 2:
+        result = multiply_two_matrices(matrix_a, matrix_b)
         return result
 
-    a, b, c, d = split_matrix(A)
-    e, f, g, h = split_matrix(B)
+    a, b, c, d = split_matrix(matrix_a)
+    e, f, g, h = split_matrix(matrix_b)
 
     p1 = strassen(a + d, e + h)
     p2 = strassen(d, g - e)
